@@ -1,0 +1,1550 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Choudhary | Digital Marketing Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 65%);
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,175,55,0.10), transparent 65%);
+            bottom: -150px;
+            right: -150px;
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.82);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212,175,55,0.25);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 7% 70px;
+            position: relative;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+            animation: slideLeft 1.2s ease;
+        }
+
+        .hero-text small {
+            color: #d4af37;
+            font-size: 17px;
+            letter-spacing: 3px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(45px, 6vw, 78px);
+            margin: 15px 0;
+            line-height: 1.05;
+        }
+
+        .hero-text h1 span {
+            color: #d4af37;
+        }
+
+        .typing {
+            font-size: 26px;
+            color: #ddd;
+            min-height: 35px;
+        }
+
+        .hero-text p {
+            max-width: 600px;
+            color: #aaa;
+            line-height: 1.8;
+            margin: 25px 0;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+
+        .gold-btn {
+            background: #d4af37;
+            color: black;
+            box-shadow: 0 0 20px rgba(212,175,55,0.25);
+        }
+
+        .gold-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 35px rgba(212,175,55,0.55);
+        }
+
+        .outline-btn {
+            border: 1px solid #d4af37;
+            color: #d4af37;
+        }
+
+        .outline-btn:hover {
+            background: #d4af37;
+            color: black;
+        }
+
+        /* DP */
+
+        .hero-photo {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            padding: 7px;
+            background: linear-gradient(135deg, #d4af37, #fff1a8, #8a6a15, #d4af37);
+            box-shadow:
+                0 0 25px rgba(212,175,55,0.3),
+                0 0 70px rgba(212,175,55,0.12);
+            animation: float 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        .hero-photo::before {
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border: 1px solid rgba(212,175,55,0.35);
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #050505;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: #d4af37;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .section-title h2 span {
+            color: #d4af37;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            border: 1px solid rgba(212,175,55,0.5);
+            box-shadow: 0 0 35px rgba(212,175,55,0.12);
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-text h3 span {
+            color: #d4af37;
+        }
+
+        .about-text p {
+            color: #aaa;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .info-box {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .info {
+            border: 1px solid rgba(212,175,55,0.25);
+            background: rgba(255,255,255,0.03);
+            padding: 12px 18px;
+            border-radius: 10px;
+            color: #ddd;
+        }
+
+        .info strong {
+            color: #d4af37;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 28px 20px;
+            text-align: center;
+            background: linear-gradient(145deg, #111, #080808);
+            border: 1px solid rgba(212,175,55,0.18);
+            border-radius: 15px;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 35px rgba(212,175,55,0.12);
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #0d0d0d;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 15px 45px rgba(212,175,55,0.13);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: #d4af37;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .project-content p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            font-size: 12px;
+        }
+
+        /* EDUCATION */
+
+        .education-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 35px;
+            border-left: 3px solid #d4af37;
+            background: linear-gradient(90deg, rgba(212,175,55,0.08), transparent);
+        }
+
+        .education-box h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .education-box span {
+            color: #d4af37;
+        }
+
+        .education-box p {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+
+        .contact-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            background: #0d0d0d;
+            border: 1px solid rgba(212,175,55,0.2);
+            transition: 0.4s;
+        }
+
+        .contact-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-7px);
+        }
+
+        .contact-card .icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: #aaa;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        /* SOCIAL BUTTONS */
+
+        .social-buttons {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-buttons a {
+            display: inline-block;
+            margin: 7px;
+            padding: 13px 25px;
+            border: 1px solid #d4af37;
+            border-radius: 30px;
+            color: #d4af37;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-buttons a:hover {
+            background: #d4af37;
+            color: black;
+        }
+
+        /* PROFESSIONAL ANIMATION */
+
+        .animation-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animation-box {
+            max-width: 1100px;
+            min-height: 430px;
+            margin: auto;
+            padding: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 40px;
+            background: linear-gradient(145deg, #111, #050505);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 25px;
+            box-shadow: 0 0 50px rgba(212,175,55,0.08);
+        }
+
+        .animation-text {
+            max-width: 500px;
+        }
+
+        .animation-text small {
+            color: #d4af37;
+            letter-spacing: 3px;
+        }
+
+        .animation-text h2 {
+            font-size: 40px;
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+
+        .animation-text h2 span {
+            color: #d4af37;
+        }
+
+        .animation-text p {
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* ANIMATION SCENE */
+
+        .cartoon-scene {
+            width: 400px;
+            height: 300px;
+            position: relative;
+        }
+
+        .laptop {
+            position: absolute;
+            width: 210px;
+            height: 130px;
+            background: #181818;
+            border: 4px solid #d4af37;
+            border-radius: 10px;
+            bottom: 35px;
+            left: 105px;
+            box-shadow: 0 0 25px rgba(212,175,55,0.2);
+        }
+
+        .laptop-screen {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .chart {
+            width: 80%;
+            height: 8px;
+            background: #d4af37;
+            margin: 10px auto;
+            border-radius: 10px;
+            animation: chartMove 2s infinite alternate;
+        }
+
+        .chart:nth-child(2) {
+            width: 55%;
+        }
+
+        .chart:nth-child(3) {
+            width: 70%;
+        }
+
+        .laptop-base {
+            position: absolute;
+            width: 250px;
+            height: 12px;
+            background: #d4af37;
+            left: -24px;
+            bottom: -16px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* PROFESSIONAL CHARACTER */
+
+        .character {
+            position: absolute;
+            width: 110px;
+            height: 170px;
+            left: 10px;
+            bottom: 45px;
+            animation: characterFloat 3s ease-in-out infinite;
+        }
+
+        .head {
+            width: 62px;
+            height: 70px;
+            background: #c98f68;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 24px;
+        }
+
+        .hair {
+            width: 66px;
+            height: 30px;
+            background: #171717;
+            border-radius: 40px 40px 10px 10px;
+            position: absolute;
+            top: -5px;
+            left: 22px;
+        }
+
+        .eye {
+            width: 6px;
+            height: 6px;
+            background: #111;
+            border-radius: 50%;
+            position: absolute;
+            top: 34px;
+        }
+
+        .eye.left {
+            left: 18px;
+        }
+
+        .eye.right {
+            right: 18px;
+        }
+
+        .body-character {
+            width: 82px;
+            height: 90px;
+            background: #202020;
+            border: 2px solid #d4af37;
+            border-radius: 18px 18px 8px 8px;
+            position: absolute;
+            top: 65px;
+            left: 14px;
+        }
+
+        .arm {
+            width: 55px;
+            height: 13px;
+            background: #202020;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            position: absolute;
+            top: 90px;
+            left: 62px;
+            transform: rotate(15deg);
+            transform-origin: left center;
+            animation: typingArm 1s ease-in-out infinite alternate;
+        }
+
+        /* FLOATING ICONS */
+
+        .float-icon {
+            position: absolute;
+            font-size: 28px;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        .icon-seo {
+            top: 10px;
+            right: 35px;
+        }
+
+        .icon-social {
+            top: 80px;
+            right: 5px;
+            animation-delay: .7s;
+        }
+
+        .icon-ads {
+            bottom: 5px;
+            right: 55px;
+            animation-delay: 1.2s;
+        }
+
+        /* THANK YOU */
+
+        .thankyou-section {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 7%;
+        }
+
+        .thankyou-box {
+            max-width: 900px;
+            width: 100%;
+            padding: 70px 30px;
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 30px;
+            background: linear-gradient(145deg, #111, #050505);
+            box-shadow: 0 0 60px rgba(212,175,55,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thankyou-box::before,
+        .thankyou-box::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 50%;
+            animation: rotate 12s linear infinite;
+        }
+
+        .thankyou-box::before {
+            top: -90px;
+            left: -90px;
+        }
+
+        .thankyou-box::after {
+            bottom: -90px;
+            right: -90px;
+            animation-direction: reverse;
+        }
+
+        .thankyou-icon {
+            font-size: 55px;
+            animation: thankFloat 2s ease-in-out infinite;
+        }
+
+        .thankyou-box h2 {
+            font-size: clamp(40px, 6vw, 65px);
+            margin: 15px 0;
+        }
+
+        .thankyou-box h2 span {
+            color: #d4af37;
+        }
+
+        .thankyou-box p {
+            max-width: 650px;
+            margin: auto;
+            color: #999;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .thankyou-tagline {
+            color: #d4af37 !important;
+            margin-top: 25px !important;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes characterFloat {
+            0%,100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes typingArm {
+            from {
+                transform: rotate(10deg);
+            }
+            to {
+                transform: rotate(25deg);
+            }
+        }
+
+        @keyframes iconFloat {
+            0%,100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(8deg);
+            }
+        }
+
+        @keyframes chartMove {
+            from {
+                transform: scaleX(.7);
+                transform-origin: left;
+            }
+            to {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+
+        @keyframes thankFloat {
+            0%,100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-photo {
+                margin: auto;
+            }
+
+            .info-box {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .animation-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 35px 15px;
+            }
+
+            .animation-text h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 17px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .cartoon-scene {
+                transform: scale(.75);
+                margin: -35px 0;
+            }
+
+            .thankyou-box {
+                padding: 55px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">Kunal<span>.</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#creative">Creative</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-text">
+
+                <small>WELCOME TO MY PORTFOLIO</small>
+
+                <h1>
+                    Kunal <span>Choudhary</span>
+                </h1>
+
+                <div class="typing" id="typing"></div>
+
+                <p>
+                    I am a passionate Digital Marketing Designer with
+                    practical knowledge of SEO, social media marketing,
+                    WordPress, advertising and creative designing.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn gold-btn">
+                        Explore My Work
+                    </a>
+
+                    <a href="#contact" class="btn outline-btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-photo">
+                <img src="./dp.jpeg" alt="Kunal Choudhary">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+            <small>ABOUT ME</small>
+            <h2>Who <span>Am I?</span></h2>
+        </div>
+
+        <div class="about-container">
+
+            <img
+                src="./dps.png"
+                alt="Kunal"
+                class="about-photo"
+            >
+
+            <div class="about-text">
+
+                <h3>I'm <span>Kunal Choudhary</span></h3>
+
+                <p>
+                    I am a Digital Marketing  from Modinagar,
+                    Ghaziabad. I am learning and developing practical
+                    skills in digital marketing, website development
+                    and creative design.
+                </p>
+
+                <p>
+                    I also enjoy sports and running. My interest in
+                    sports inspired me to create my Sports Equipment
+                    Website as one of my portfolio projects.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info">
+                        <strong>Location:</strong> Modinagar, Ghaziabad
+                    </div>
+
+                    <div class="info">
+                        <strong>Degree:</strong> B.A.
+                    </div>
+
+                    <div class="info">
+                        <strong>Training:</strong> Digital Marketing
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+            <small>MY SKILLS</small>
+            <h2>What I <span>Can Do</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">🔍</div>
+                <h3>SEO</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📢</div>
+                <h3>Google Ads</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📱</div>
+                <h3>Meta Ads</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">▶️</div>
+                <h3>YouTube Marketing</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📲</div>
+                <h3>Social Media Marketing</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🎬</div>
+                <h3>Video Editing</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>WordPress</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3>Canva</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🖼️</div>
+                <h3>Photoshop</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>HTML & CSS</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+            <small>MY WORK</small>
+            <h2>Featured <span>Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <img
+                    src="./website.png"
+                    alt="Sports Equipment Website"
+                >
+
+                <div class="project-content">
+
+                    <h3>Sports Equipment Website</h3>
+
+                    <p>
+                        A modern sports equipment website created
+                        using HTML and CSS with categories such as
+                        Cricket, Football, Basketball, Badminton,
+                        Tennis and Hockey.
+                    </p>
+
+                    <span class="project-tag">
+                        HTML / CSS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <img
+                    src="./cup.jpeg"
+                    alt="Photoshop Project"
+                >
+
+                <div class="project-content">
+
+                    <h3>Photoshop Project</h3>
+
+                    <p>
+                        Creative image editing and graphic design
+                        work created using Adobe Photoshop.
+                    </p>
+
+                    <span class="project-tag">
+                        Photoshop
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <img
+                    src="canva.jpg"
+                    alt="Canva Project"
+                >
+
+                <div class="project-content">
+
+                    <h3>Canva Project</h3>
+
+                    <p>
+                        Social media creatives and visual designs
+                        created using Canva.
+                    </p>
+
+                    <span class="project-tag">
+                        Canva
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <img
+                    src="./wordpress.jpg"
+                    alt="WordPress Website"
+                >
+
+                <div class="project-content">
+
+                    <h3>WordPress Website</h3>
+
+                    <p>
+                        Website project created using WordPress
+                        with focus on clean layout and user-friendly
+                        design.
+                    </p>
+
+                    <span class="project-tag">
+                        WordPress
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-title">
+            <small>MY EDUCATION</small>
+            <h2>Education & <span>Training</span></h2>
+        </div>
+
+        <div class="education-box">
+
+            <h3>Bachelor of Arts <span>(B.A.)</span></h3>
+
+            <p>
+                Completed Bachelor of Arts and currently building
+                practical skills in Digital Marketing, Website
+                Development and Creative Designing.
+            </p>
+
+            <br>
+
+            <h3>Digital Marketing Training</h3>
+
+            <p>
+                Digital Marketing training from
+                <strong>G TEC Education</strong>.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+            <small>GET IN TOUCH</small>
+            <h2>Contact <span>Me</span></h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+
+                <div class="icon">📞</div>
+
+                <h3>Phone</h3>
+
+                <a href="tel:9389336771">
+                    9389336771
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">✉️</div>
+
+                <h3>Email</h3>
+
+                <a href="mailto:kc459171@gmail.com">
+                    kc459171@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">📍</div>
+
+                <h3>Location</h3>
+
+                <p>
+                    Modinagar, Ghaziabad
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="social-buttons">
+
+            <a href="https://wa.me/919389336771" target="_blank">
+                WhatsApp
+            </a>
+
+            <a href="#" target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CREATIVE ANIMATION -->
+
+    <section class="animation-section" id="creative">
+
+        <div class="section-title">
+            <small>CREATIVE SIDE</small>
+            <h2>Learning. <span>Creating. Growing.</span></h2>
+        </div>
+
+        <div class="animation-box">
+
+            <div class="animation-text">
+
+                <small>MY DIGITAL JOURNEY</small>
+
+                <h2>
+                    Turning Ideas Into
+                    <span>Digital Work</span>
+                </h2>
+
+                <p>
+                    I am continuously learning digital marketing,
+                    website development and creative designing.
+                    My goal is to build useful, creative and
+                    professional digital projects.
+                </p>
+
+            </div>
+
+
+            <div class="cartoon-scene">
+
+                <div class="character">
+
+                    <div class="hair"></div>
+
+                    <div class="head">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                    </div>
+
+                    <div class="body-character"></div>
+
+                    <div class="arm"></div>
+
+                </div>
+
+
+                <div class="laptop">
+
+                    <div class="laptop-screen">
+
+                        <div class="chart"></div>
+                        <div class="chart"></div>
+                        <div class="chart"></div>
+
+                    </div>
+
+                    <div class="laptop-base"></div>
+
+                </div>
+
+
+                <div class="float-icon icon-seo">🔍</div>
+                <div class="float-icon icon-social">📱</div>
+                <div class="float-icon icon-ads">📈</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- THANK YOU -->
+
+    <section class="thankyou-section" id="thankyou">
+
+        <div class="thankyou-box">
+
+            <div class="thankyou-icon">✨</div>
+
+            <h2>
+                Thank <span>You!</span>
+            </h2>
+
+            <p>
+                Thank you for taking the time to explore my portfolio.
+                I appreciate your visit and look forward to learning,
+                creating and working on new digital projects.
+            </p>
+
+            <p class="thankyou-tagline">
+                LEARN • CREATE • IMPROVE • GROW
+            </p>
+
+            <div class="social-buttons">
+
+                <a href="mailto:kc459171@gmail.com">
+                    Email Me
+                </a>
+
+                <a href="https://wa.me/919389336771" target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 <span>Kunal Choudhary</span>.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* TYPING ANIMATION */
+
+        const words = [
+            "Digital Marketing",
+            "SEO Learner",
+            "Creative Designer",
+            "Website Developer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const typing = document.getElementById("typing");
+
+        function typeEffect() {
+
+            const currentWord = words[wordIndex];
+
+            if (!deleting) {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(typeEffect, 1400);
+                    return;
+                }
+
+            } else {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+                    if (wordIndex === words.length) {
+                        wordIndex = 0;
+                    }
+                }
+            }
+
+            setTimeout(typeEffect, deleting ? 50 : 90);
+        }
+
+        typeEffect();
+
+
+        /* SCROLL REVEAL */
+
+        const cards =
+            document.querySelectorAll(
+                ".skill-card, .project-card, .contact-card, .education-box, .animation-box, .thankyou-box"
+            );
+
+        cards.forEach(card => {
+
+            card.style.opacity = "0";
+            card.style.transform = "translateY(35px)";
+            card.style.transition = "0.7s ease";
+
+        });
+
+
+        const observer = new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+        cards.forEach(card => observer.observe(card));
+
+    </script>
+
+</body>
+</html>
+```
